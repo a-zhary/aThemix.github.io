@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body class="lines">
 
 	<header class="header">
 		<div class="container">
@@ -56,22 +56,27 @@
 				<h3 class="audio-nav__item">Принимай меня</h3>
 			</div>
 
-			<div class="audio-slider-wrap">
-				<div class="audio-slider">
-					<div class="audio-slider__item"><img src="img/audio-slide1.jpg" alt="Принимай меня"
-							class="audio-slider__image">
-					</div>
-					<div class="audio-slider__item"><img src="img/audio-slide1.jpg" alt="Под звуки поцелуев"
-							class="audio-slider__image"></div>
-					<div class="audio-slider__item"><img src="img/audio-slide1.jpg" alt="Принимай меня"
-							class="audio-slider__image">
-					</div>
+			<div class="audio-slider">
+				<div class="audio-slider__item" data-song="audio/recieve-me.mp3">
+					<img src="img/audio-slide1.jpg" alt="Принимай меня" class="audio-slider__image">
 				</div>
-				<div class="audio-slider__controls">
-					<a class="button-play audio-slider__play">Слушать <img class="play-icon" src="img/music-icons/play-white.svg"
-							alt=""></a>
-					<a class="button-play audio-slider__more">Больше песен</a>
+				<div class="audio-slider__item" data-song="audio/kiss.mp3">
+					<img src="img/audio-slide2.jpg" alt="Принимай меня" class="audio-slider__image">
 				</div>
+				<div class="audio-slider__item" data-song="audio/recieve-me.mp3">
+					<img src="img/audio-slide1.jpg" alt="Принимай меня" class="audio-slider__image">
+				</div>
+			</div>
+
+			<div class="control-list">
+				<a class="control-list__item control-list__item--prev"></a>
+				<a class="control-list__item control-list__item--play">Слушать</a>
+				<a href="#" class="control-list__item control-list__item--more">Больше песен</a>
+				<a class="control-list__item control-list__item--next"></a>
+				<audio id="buzPlayer" src="audio/recieve-me.mp3">
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
 			</div>
 
 			<div class="music-icons">
