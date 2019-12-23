@@ -1,0 +1,507 @@
+@import "libs";
+@import "vars";
+@import "fonts";
+
+@include reset;
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: $accent;
+	color: #fff;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 18px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $default-font;
+	font-weight: 400;
+	overflow-x: hidden;
+	color: $text;
+	input, textarea {
+		border: #666 1px solid;
+		outline: none;
+		&:focus:required:invalid {
+			border-color: red;
+		}
+		&:required:valid {
+			border-color: green;
+		}
+	}
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	&.img-width {
+		width: 100%;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 1px;
+	border: 1px solid #fff;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 12px 30px;
+	font-family: 'LatoLight', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.2);
+	margin-bottom: 20px;
+}
+
+.header {
+	position: relative;
+	background-image: url("../img/header-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	height: 100vh;
+
+	@include lg(height, 890px);
+	@include md(height, 800px);
+	@include md(height, 460px);
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.menu {
+	position: relative;
+	z-index: 10;
+	padding-top: 50px;
+	@include xs-block{
+		padding-top: 25px;
+	};
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+
+		a {
+			display: inline-block;
+			font-size: 18px;
+			line-height: 22px;
+			color: #FFFFFF;
+			padding: 10px 0;
+			border-bottom: 1px solid transparent;
+			text-transform: uppercase;
+			text-decoration: none;
+
+			@include xs-block{
+				font-size: 14px;
+				padding: 5px;
+				margin: 5px;
+			};
+
+			@include xs(font-size, 16px);
+		}
+	}
+
+}
+
+.menu__item--active {
+	a {
+		border-bottom: 1px solid #fff;
+	}
+}
+
+.hero	{
+	position: relative;
+	z-index: 10;
+	color: #ffffff;
+	background-image: url('../img/header-hero.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center top;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+
+	&__title {
+		font-family: 'LatoThin', sans-serif;
+		font-weight: 200;
+		font-size: 64px;
+		line-height: 77px;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: -315px;
+
+		@include lg(margin-bottom, -200px);
+		@include lg-block{
+			margin-bottom: 0;
+			font-size: 42px;
+		};
+
+	}
+}
+
+.section {
+	position: relative;
+	padding: 150px 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&--music {
+		background-image: url('../img/section-music-bg.jpg');
+		background-position: center right;
+		z-index: 20;
+	}
+
+	&--video {
+		background-image: url('../img/section-video-bg.jpg');
+		background-position: center top;
+	}
+
+	&--shop {
+		background-image: url('../img/section-shop-bg.jpg');
+		background-position: center top;
+	}
+
+	&--concerts {
+		background-image: url('../img/section-concerts-bg.jpg');
+		background-position: center bottom;
+	}
+
+	&__heading {
+		font-family: 'LatoThin' ,sans-serif;
+		font-weight: 200;
+		font-size: 36px;
+		line-height: 43px;
+		margin: 0;
+		margin-bottom: 60px;
+	}
+}
+
+.audio-nav {
+
+	&__item {
+		margin-right: 80px;
+		outline: none;
+	}
+
+	&__title {
+		display: inline-block;
+		font-family: 'LatoLight', sans-serif;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 22px;
+		cursor: pointer;
+		margin-bottom: 40px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid transparent;
+	}
+}
+
+.audio-slider-wrap {
+	position: relative;
+	margin-bottom: 110px;
+}
+
+.audio-slider {
+	position: relative;
+	max-width: 600px;
+	padding: 18px;
+	border: 1px solid #fff;
+	border-radius: 1px;
+
+	&__image {
+		border: 1px solid #fff;
+		border-radius: 1px;
+
+	}
+
+	.slick-prev, .slick-next {
+		bottom: -100px;
+		top: unset;
+		border: 1px solid #fff;
+		width: 45px;
+		height: 45px;
+		background: rgba(255, 255, 255, 0.2);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 1px;
+		box-sizing: border-box;
+		&::before {
+			content: '';
+			position: relative;
+			z-index: 10;
+			background-image: url('../img/music-icons/arrow.svg');
+			width: 17px;
+			height: 17px;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+
+	&__controls {
+		position: absolute;
+    left: 60px;
+    bottom: -77px;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    justify-content: space-between;
+	}
+
+	&__play,
+	&__more {
+		display: inline-block;
+		height: 45px;
+		background: rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(2px);
+		border: 1px solid #fff;
+		border-radius: 1px;
+		color: #ffffff;
+		padding: 0 30px;
+		font-family: 'LatoLight', sans-serif;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 45px;
+		width: 100%;
+		max-width: 230px;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.slick-prev {
+		left: 0;
+	}
+
+	.slick-next {
+		right: 0;
+		&::before {
+			transform: scaleX(-1);
+		}
+	}
+}
+
+.play-icon {
+	margin-left: 5px;
+}
+
+.music-icons {
+	margin-left: 20px;
+	img {
+		display: inline-block;
+		margin-right: 15px;
+	}
+}
+
+.audio-nav {
+	margin-bottom: 30px;
+	&__item {
+		display: inline-block;
+		cursor: pointer;
+		outline: none;
+	}
+}
+
+.video-list {
+	max-width: 572px;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	border-radius: 1px;
+	border: 1px solid #fff;
+
+	@include xs-block{
+		justify-content: center;
+	};
+
+	&__item	{
+		margin: 18px;
+		border-radius: 1px;
+		border: 1px solid #fff;
+	}
+
+	&__button {
+		margin: 0 80px 30px;
+		flex-grow: 1;
+
+		@include xs-block{
+			margin: 30px 20px;
+		};
+	}
+}
+
+.product-list {
+	@include row-flex;
+
+	&__item {
+		@include col;
+		@include size(4);
+		@include size-xs(12);
+		@include xs(margin-bottom, 30px);
+	}
+
+	&__more-button {
+		flex-grow: 1;
+		margin-top: 60px;
+		max-width: 230px;
+		width: 100%;
+		margin: 60px auto 0;
+	}
+}
+
+.product-item {
+
+	&__image {
+		border: 1px solid #fff;
+		margin-bottom: 30px;
+	}
+
+	&__footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__meta {
+		margin-bottom: 30px;
+	}
+
+	&__title {
+		display: block;
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	&__tag {
+		display: block;
+		font-size: 18px;
+		line-height: 22px;
+	}
+}
+
+.concerts-list {
+	margin: 0;
+
+	&__item {
+		margin-bottom: 15px;
+		display: flex;
+		align-items: center;
+	}
+}
+
+.concerts-item {
+	font-size: 18px;
+	line-height: 22px;
+
+	@include xs(font-size, 16px);
+	&__date {
+		margin-right: 5px;
+	}
+}
+
+.concerts {
+	border: 1px solid #fff;
+	border-radius: 1px;
+	max-width: 420px;
+	padding: 30px 20px;
+
+	&__buttons {
+		margin-top: 30px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}
+
+.footer {
+	padding: 60px 0;
+	background-color: #111111;
+
+	&-item {
+		@include col;
+		@include size(4);
+		@include size-md(6);
+		@include size-xs(12);
+		@include xs(margin-bottom, 40px);
+
+		&--right {
+			text-align: right;
+
+			@include md(text-align, left);
+		}
+	}
+
+	&-item-title {
+		font-size: 18px;
+		line-height: 22px;
+
+	}
+}
+
+.footer-item__title--upper {
+	text-transform: uppercase;
+
+	@include md(padding-top, 10px);
+}
+
+.social-list {
+	margin: 52px 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item {
+		margin-right: 15px;
+	}
+}
+
+.footer__menu {
+	@include row-flex;
+	text-align: left;
+	justify-content: space-between;
+
+	&-item {
+		@include col;
+		@include size(6);
+
+		margin-bottom: 15px;
+	}
+}
+.footer__contact {
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+.footer__copyright {
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 21px;
+	text-align: center;
+}
