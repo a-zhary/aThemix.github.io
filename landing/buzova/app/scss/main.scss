@@ -97,7 +97,7 @@ b, strong {
 
 .menu {
 	position: relative;
-	z-index: 10;
+	z-index: 100;
 	padding-top: 50px;
 	@include xs-block{
 		padding-top: 25px;
