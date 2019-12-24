@@ -309,24 +309,24 @@
   font-family: "LatoThin";
   font-weight: 200;
   font-style: normal;
-  src: url("../fonts/LatoThin/LatoThin.eot");
-  src: url("../fonts/LatoThin/LatoThin.eot?#iefix") format("embedded-opentype"), url("../fonts/LatoThin/LatoThin.woff") format("woff"), url("../fonts/LatoThin/LatoThin.ttf") format("truetype");
+  src: url("../fonts/LatoThin/latothin.eot");
+  src: url("../fonts/LatoThin/latothin.eot?#iefix") format("embedded-opentype"), url("../fonts/LatoThin/latothin.woff") format("woff"), url("../fonts/LatoThin/latothin.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "LatoLight";
   font-weight: 300;
   font-style: normal;
-  src: url("../fonts/LatoLight/LatoLight.eot");
-  src: url("../fonts/LatoLight/LatoLight.eot?#iefix") format("embedded-opentype"), url("../fonts/LatoLight/LatoLight.woff") format("woff"), url("../fonts/LatoLight/LatoLight.ttf") format("truetype");
+  src: url("../fonts/LatoLight/latolight.eot");
+  src: url("../fonts/LatoLight/latolight.eot?#iefix") format("embedded-opentype"), url("../fonts/LatoLight/latolight.woff") format("woff"), url("../fonts/LatoLight/latolight.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "LatoRegular";
   font-weight: 400;
   font-style: normal;
-  src: url("../fonts/LatoRegular/LatoRegular.eot");
-  src: url("../fonts/LatoRegular/LatoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/LatoRegular/LatoRegular.woff") format("woff"), url("../fonts/LatoRegular/LatoRegular.ttf") format("truetype");
+  src: url("../fonts/LatoRegular/latoregular.eot");
+  src: url("../fonts/LatoRegular/latoregular.eot?#iefix") format("embedded-opentype"), url("../fonts/LatoRegular/latoregular.woff") format("woff"), url("../fonts/LatoRegular/latoregular.ttf") format("truetype");
 }
 
 body,
