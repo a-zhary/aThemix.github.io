@@ -23,6 +23,9 @@ const options = {
 		},
 		xs: {
 			width: "576px"
+		},
+		xxs: {
+			width: "320px"
 		}
 	},
 	mixinNames: {

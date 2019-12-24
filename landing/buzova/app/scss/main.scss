@@ -70,25 +70,79 @@ b, strong {
 	text-align: center;
 	background: rgba(255, 255, 255, 0.2);
 	margin-bottom: 20px;
+	transition: all 350ms ease;
+	&:hover {
+		background-color: darken(rgba(255, 255, 255, 0.2), 70%);
+	}
 }
 
-// .lines {
-// 	position: relative;
-// 	&::before {
-// 		content: "";
-// 		@include wrapper;
-// 		position: absolute;
-// 		height: 100%;
-// 		left: 0;
-// 		right: 0;
-// 		width: 100%;
-// 		border-left: 1px solid #fff;
-// 		border-right: 1px solid #fff;
-// 		padding-left: 0;
-// 		padding-right: 0;
-// 		z-index: 15;
-// 	}
-// }
+.line {
+
+	&-left {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			background-color: rgba(#fff, 0.7);
+			left: 20%;
+			z-index: 20;
+
+			@include lg(left, 3%);
+
+			@include md(content, none);
+		}
+	}
+
+	&-right {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			background-color: rgba(#fff, 0.7);
+			top: 0;
+			right: 20%;
+			z-index: 20;
+
+			@include lg(right, 3%);
+			@include md(content, none);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			background-color: rgba(#fff, 0.7);
+			bottom: 0;
+			right: 20%;
+			z-index: 20;
+
+			@include lg(right, 3%);
+			@include md(content, none);
+		}
+
+		&--music::before {
+			height: 6%;
+		}
+		&--music::after {
+			height: 38%;
+		}
+
+		&--shop::before {
+			height: 6.5%;
+		}
+		&--shop::after {
+			height: 37.5%;
+		}
+	}
+
+}
 
 .header {
 	position: relative;
@@ -97,6 +151,8 @@ b, strong {
 	background-size: cover;
 	background-position: center top;
 	height: 100vh;
+
+
 
 	@include lg(height, 890px);
 	@include md(height, 800px);
@@ -314,6 +370,10 @@ b, strong {
 	text-decoration: none;
 	color: #ffffff;
 	cursor: pointer;
+	transition: all 350ms ease;
+	&:hover {
+		background-color: darken(rgba(255, 255, 255, 0.2), 90%);
+	}
 
 	&:last-child {
 		margin-right: 0;
@@ -384,47 +444,6 @@ b, strong {
 	margin-left: 20px;
 }
 
-
-// &__prev{
-// 		&::before {
-// 			content: '';
-// 			position: absolute;
-// 			display: block;
-// 			width: 18px;
-// 			height: 18px;
-// 			left: 50%;
-// 			top: 50%;
-// 			transform: translate(-50%,-50%);
-// 			background-repeat: no-repeat;
-// 			margin-top: 2px;
-// 		}
-// 	}
-// .audio-slider__prev,
-// .audio-slider__next,
-// .audio-slider__more {
-// 	position: relative;
-// 	bottom: 0;
-// 	padding: 0;
-// 	height: 45px;
-// 	width: 45px;
-// 	top: unset;
-// 	margin-bottom: 0;
-// 	background: rgba(255, 255, 255, 0.2);
-// 	border: 1px solid #fff;
-// 	&::before {
-// 		content: '';
-// 		position: absolute;
-// 		display: block;
-// 		width: 18px;
-// 		height: 18px;
-// 		left: 50%;
-// 		top: 50%;
-// 		transform: translate(-50%,-50%);
-// 		background-repeat: no-repeat;
-// 		margin-top: 2px;
-// 	}
-// }
-
 .control__prev {
 	left: 0;
 	&::before {
@@ -455,10 +474,12 @@ b, strong {
 		justify-content: center;
 	};
 
-	&__item	{
-		margin: 18px;
+	&__item {
+		margin: 15px;
 		border-radius: 1px;
-		border: 1px solid #fff;
+		img {
+			border: 1px solid #fff;
+		}
 	}
 
 	&__button {
@@ -473,12 +494,16 @@ b, strong {
 
 .product-list {
 	@include row-flex;
+	@include lg(justify-content, center);
 
 	&__item {
 		@include col;
 		@include size(4);
+		@include size-lg(6);
 		@include size-xs(12);
 		@include xs(margin-bottom, 30px);
+
+
 	}
 
 	&__more-button {
@@ -487,14 +512,45 @@ b, strong {
 		max-width: 230px;
 		width: 100%;
 		margin: 60px auto 0;
+		@include lg(max-width, 500px);
+		@include xs(max-width, 290px);
 	}
 }
 
 .product-item {
+	&:hover {
+		.product-item__image {
+			transform: scale(1.1);
+		}
+	}
+
+	&__image-wrap {
+		overflow: hidden;
+    width: 360px;
+    height: 357px;
+		margin-bottom: 30px;
+		border: 1px solid #fff;
+		box-sizing: border-box;
+
+		@include lg-block{
+			width: 100%;
+			max-height: 350px;
+		}
+		@include xs-block{
+			max-height: 343px;
+		}
+
+		@include xxs-block{
+			max-height: 285px;
+		}
+	}
 
 	&__image {
-		border: 1px solid #fff;
 		margin-bottom: 30px;
+		transition: all .7s ease;
+		@include lg-block{
+			width: 100%;
+		}
 	}
 
 	&__footer {

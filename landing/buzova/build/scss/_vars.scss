@@ -4,8 +4,6 @@ $text: #fff;
 
 .container {
 	@include wrapper;
-	position: relative;
-	z-index: 20;
 }
 
 .row {
