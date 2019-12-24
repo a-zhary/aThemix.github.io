@@ -253,6 +253,8 @@ b, strong {
 		padding: 18px;
 		transition: none;
 
+		@include xs(padding, 0);
+
 	}
 
 	.audio-slider__item.slick-current {
@@ -262,6 +264,12 @@ b, strong {
 		width: 100%;
 		margin-top: 0;
 		filter: none;
+
+		@include xs-block{
+			margin-left: 0;
+			margin-right: 0;
+		}
+
 		.audio-slider__image {
 			filter: none;
 		}
@@ -273,6 +281,10 @@ b, strong {
 		margin-right: 20px;
 		margin-top: 50px;
 		transition: all 0.2ms ease;
+
+		@include xs-block{
+			margin-right: 0;
+		}
 
 		.audio-slider__image {
 			filter: blur(3px);
@@ -344,6 +356,8 @@ b, strong {
 	// width: 100%;
 	margin-bottom: 30px;
 	margin-left: 225px;
+
+	@include xs(margin-left, 0);
 
 	&__item {
 		display: inline-block !important;

@@ -1159,6 +1159,23 @@ strong {
     font-size: 16px;
   }
 
+  .audio-slider__item {
+    padding: 0;
+  }
+
+  .audio-slider .audio-slider__item.slick-current {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .audio-slider .audio-slider__item {
+    margin-right: 0;
+  }
+
+  .audio-nav {
+    margin-left: 0;
+  }
+
   .video-list {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
