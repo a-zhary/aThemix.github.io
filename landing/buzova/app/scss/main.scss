@@ -87,7 +87,7 @@ b, strong {
 			width: 1px;
 			height: 100%;
 			background-color: rgba(#fff, 0.7);
-			left: 20%;
+			left: 4.5%;
 			z-index: 20;
 
 			@include lg(left, 3%);
@@ -106,7 +106,7 @@ b, strong {
 			height: 100%;
 			background-color: rgba(#fff, 0.7);
 			top: 0;
-			right: 20%;
+			right: 4.5%;
 			z-index: 20;
 
 			@include lg(right, 3%);
@@ -120,7 +120,7 @@ b, strong {
 			height: 100%;
 			background-color: rgba(#fff, 0.7);
 			bottom: 0;
-			right: 20%;
+			right: 4.5%;
 			z-index: 20;
 
 			@include lg(right, 3%);

@@ -11,6 +11,9 @@ const options = {
 		fields: "30px"
 	},
 	breakPoints: {
+		xl: {
+			width: "1920px"
+		},
 		lg: {
 			width: "1024px"
 		},
