@@ -81,10 +81,11 @@ body {
 
 .progress__circle {
     background-color: #f1ebeb;
+    font-size: 1.8rem;
     color: #999;
     border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
+    height: 3em;
+    width: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +112,7 @@ body {
     font-family: inherit;
     padding: 0.8em 3em;
     margin: 0.5rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     transition: transform .4s ease, background-color .4s ease;
 }
 
