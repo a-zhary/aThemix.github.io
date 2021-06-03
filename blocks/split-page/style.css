@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+	--left-bg-color: rgba(87, 84, 236, 0.7);
+	--right-bg-color: rgba(43, 43, 43, 0.8);
+	--blue-hover-color: rgba(65, 62, 230, 1);
+	--green-hover-color: rgba(28, 122, 28, 1);
+	--hover-width: 75%;
+	--over-width: 25%;
+	--spedd: 1000ms;
+	--ps-url: url('ps.jpg');
+	--xbox-url: url('xbox.jpg');
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+}
+
+.split {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.split__title {
+	font-size: 4rem;
+	color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+}
+
+.split--left {
+	left: 0;
+	background-image: var(--ps-url);
+}
+
+.split--right {
+	right: 0;
+	background-image: var(--xbox-url);
+}
+
+.split--left,
+.split--right,
+.split--left::before,
+.split--right::before {
+	transition: all var(--spedd) ease-in-out;
+}
+
+.split--left::before,
+.split--right::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.split--left::before {
+	background-color: var(--left-bg-color);
+}
+
+.split--right::before {
+	background-color: var(--right-bg-color);
+}
+
+.btn {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	left: 50%;
+	top: 40%;
+	transform: translateX(-50%);
+	text-decoration: none;
+	color: #fff;
+	border: 0.2rem solid #fff;
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	width: 15rem;
+	padding: 1.5rem;
+	transition: all calc(var(--spedd) / 2) ease-in-out;
+}
+
+.btn--green-hover:hover {
+	background-color: var(--blue-hover-color);
+	border-color: var(--blue-hover-color);
+}
+
+.btn--blue-hover:hover {
+	background-color: var(--green-hover-color);
+	border-color: var(--green-hover-color);
+}
+
+.hover-left .split--left {
+	width: var(--hover-width);
+}
+
+.hover-left .split--right {
+	width: var(--over-width);
+}
+
+.hover-right .split--right {
+	width: var(--hover-width);
+}
+
+.hover-right .split--left {
+	width: var(--over-width);
+}
+
+@media (max-width: 800px) {
+	.split__title {
+		font-size: 2rem;
+		top: 30%;
+	}
+
+	.btn {
+		padding: 1.2rem;
+		width: 12rem;
+	}
+}
